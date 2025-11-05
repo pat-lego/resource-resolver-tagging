@@ -1,0 +1,6 @@
+// Configuration created by Apache Sling JCR Installer
+{
+  "scripts":[
+    "create service user aemsupport\r\nset ACL on /content\r\n    allow jcr:read for aemsupport\r\nend"
+  ]
+}
