@@ -35,7 +35,7 @@ public class SimpleServiceImpl implements SimpleService {
         
         Resource content = resolver.getResource("/content");
         TagManager tagger = tagPojo.getTagManager(content);
-        Tag tag = tagger.resolve("/content/cq:tags/support");
+        Tag tag = tagger.resolve("/content/cq:tags");
         logger.info("Tag " + tag.getCount());
     }
 
