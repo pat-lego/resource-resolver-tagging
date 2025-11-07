@@ -14,11 +14,10 @@ import org.slf4j.LoggerFactory;
 
 import com.adobe.aem.support.core.pojo.TagPojo;
 import com.day.cq.tagging.InvalidTagFormatException;
-import com.day.cq.tagging.JcrTagManagerFactory;
 import com.day.cq.tagging.Tag;
 import com.day.cq.tagging.TagManager;
 
-@Component(service = SimpleService.class)
+@Component(service = SimpleService.class, immediate = true)
 public class SimpleServiceImpl implements SimpleService {
 
     Logger logger = LoggerFactory.getLogger(getClass());

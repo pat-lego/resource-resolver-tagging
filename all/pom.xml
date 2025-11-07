@@ -14,8 +14,8 @@
  |  limitations under the License.
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <!-- ====================================================================== -->
@@ -51,7 +51,8 @@
                 <configuration>
                     <group>com.adobe.aem.support</group>
                     <packageType>container</packageType>
-                    <!-- skip sub package validation for now as some vendor packages like CIF apps will not pass -->
+                    <!-- skip sub package validation for now as some vendor packages like CIF apps
+                    will not pass -->
                     <skipSubPackageValidation>true</skipSubPackageValidation>
                     <embeddeds>
                         <embedded>
@@ -96,7 +97,7 @@
                     <execution>
                         <id>aem-analyser</id>
                         <goals>
-                            <goal>project-analyse</goal>                           
+                            <goal>project-analyse</goal>
                         </goals>
                     </execution>
                 </executions>
@@ -125,7 +126,8 @@
                                     <goal>install</goal>
                                 </goals>
                                 <configuration>
-                                    <targetURL>http://${aem.host}:${aem.port}/crx/packmgr/service.jsp</targetURL>
+                                    <targetURL>
+                                        http://${aem.host}:${aem.port}/crx/packmgr/service.jsp</targetURL>
                                     <failOnError>true</failOnError>
                                 </configuration>
                             </execution>
@@ -151,7 +153,8 @@
                                     <goal>install</goal>
                                 </goals>
                                 <configuration>
-                                    <targetURL>http://${aem.publish.host}:${aem.publish.port}/crx/packmgr/service.jsp</targetURL>
+                                    <targetURL>
+                                        http://${aem.publish.host}:${aem.publish.port}/crx/packmgr/service.jsp</targetURL>
                                     <failOnError>true</failOnError>
                                 </configuration>
                             </execution>
@@ -159,13 +162,18 @@
                     </plugin>
                 </plugins>
             </build>
-    </profile>
+        </profile>
     </profiles>
 
     <!-- ====================================================================== -->
     <!-- D E P E N D E N C I E S                                                -->
     <!-- ====================================================================== -->
     <dependencies>
+        <dependency>
+            <groupId>com.adobe.aem.support</groupId>
+            <artifactId>resourceresolver.core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
         <dependency>
             <groupId>com.adobe.aem.support</groupId>
             <artifactId>resourceresolver.ui.config</artifactId>
